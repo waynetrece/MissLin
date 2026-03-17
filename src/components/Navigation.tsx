@@ -19,7 +19,7 @@ export default function Navigation({
   return (
     <>
       <nav
-        className="fixed top-0 left-0 right-0 z-50 h-16 flex items-center justify-between px-8"
+        className="fixed top-0 left-0 right-0 z-50 h-16 flex items-center justify-between px-12"
         style={{
           background: "rgba(250, 250, 248, 0.92)",
           backdropFilter: "blur(12px)",
@@ -36,20 +36,20 @@ export default function Navigation({
           <div style={{ width: 48, height: 1, background: "#9A8866" }} />
           <span
             className="hidden sm:block text-xs tracking-wider"
-            style={{ color: "#9C9C9C" }}
+            style={{ color: "#707070" }}
           >
             Web Design & Development
           </span>
         </div>
 
-        <div className="hidden md:flex items-center gap-1">
+        <div className="hidden md:flex items-center gap-3">
           {sections.map((section, i) => (
             <button
               key={section.id}
               onClick={() => onNavigate(section.id)}
               className="relative px-4 py-2 text-sm tracking-wide transition-colors duration-300"
               style={{
-                color: i === currentNavIndex ? "#9A8866" : "#5C5C5C",
+                color: i === currentNavIndex ? "#9A8866" : "#3D3D3D",
               }}
             >
               {section.label}
@@ -122,7 +122,7 @@ export default function Navigation({
                   }}
                   className="text-2xl font-light tracking-wider transition-colors duration-300"
                   style={{
-                    color: i === currentNavIndex ? "#9A8866" : "#5C5C5C",
+                    color: i === currentNavIndex ? "#9A8866" : "#3D3D3D",
                   }}
                 >
                   {section.label}

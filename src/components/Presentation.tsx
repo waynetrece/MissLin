@@ -138,7 +138,7 @@ export default function Presentation() {
       )}
 
       {/* Page number */}
-      <div className="fixed bottom-8 right-8 z-50 text-sm tracking-wider" style={{ color: "#9C9C9C" }}>
+      <div className="fixed bottom-8 right-8 z-50 text-sm tracking-wider" style={{ color: "#707070" }}>
         <span style={{ color: "#9A8866" }}>{String(currentIndex + 1).padStart(2, "0")}</span>
         <span className="mx-1">/</span>
         <span>{String(slides.length).padStart(2, "0")}</span>

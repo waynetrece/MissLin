@@ -199,7 +199,7 @@ export function Subtext({ children }: { children: ReactNode }) {
     <p
       style={{
         fontSize: 18,
-        color: "#5C5C5C",
+        color: "#3D3D3D",
         fontWeight: 300,
         lineHeight: 1.8,
         maxWidth: 600,
