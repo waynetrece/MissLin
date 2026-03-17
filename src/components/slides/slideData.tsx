@@ -1108,59 +1108,51 @@ function FeaturesTech() {
 // ===== Features Slide 3: Project Management =====
 function FeaturesService() {
   return (
-    <SplitSlide
-      left={
-        <>
-          <FadeIn>
-            <Label>Project Management</Label>
-          </FadeIn>
-          <FadeIn delay={0.1}>
-            <Heading size="medium">專案管理</Heading>
-          </FadeIn>
-          <FadeIn delay={0.15}>
-            <GoldLine />
-          </FadeIn>
-          <FadeIn delay={0.2}>
-            <Subtext>
-              使用 Notion 作為專案管理工具，每個階段都有透明的追蹤記錄
-            </Subtext>
-          </FadeIn>
-          <FadeIn delay={0.3}>
-            <div style={{ marginTop: 28, display: "flex", flexDirection: "column", gap: 16 }}>
-              {[
-                { name: "Notion 進度追蹤", desc: "透明的專案管理，隨時掌握狀態" },
-                { name: "標準流程", desc: "需求確認 → 設計 → 開發 → 驗收" },
-                { name: "設計稿校對", desc: "線上即時校對，減少來回溝通" },
-                { name: "溝通記錄", desc: "即時溝通與修改歷程完整保留" },
-              ].map((item, i) => (
-                <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: 12 }}>
-                  <div style={{ width: 6, height: 6, borderRadius: 3, background: "linear-gradient(135deg, #9A8866, #C4B48A)", flexShrink: 0, marginTop: 8 }} />
-                  <div>
-                    <p style={{ fontSize: 16, color: "#2C2C2C", fontWeight: 500, marginBottom: 3 }}>{item.name}</p>
-                    <p style={{ fontSize: 14, color: "#666666", fontWeight: 300 }}>{item.desc}</p>
-                  </div>
-                </div>
-              ))}
+    <ContentSlide>
+      <FadeIn>
+        <Label>Project Management</Label>
+      </FadeIn>
+      <FadeIn delay={0.1}>
+        <Heading size="medium">專案管理</Heading>
+      </FadeIn>
+      <FadeIn delay={0.15}>
+        <p style={{ fontSize: 18, color: "#2C2C2C", fontWeight: 300, marginBottom: 36 }}>
+          使用 Notion 作為專案管理工具，每個階段都有透明的追蹤記錄
+        </p>
+      </FadeIn>
+
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
+        {[
+          { name: "Notion 進度追蹤", desc: "透明的專案管理，隨時掌握狀態", icon: "M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" },
+          { name: "標準流程", desc: "需求確認 → 設計 → 開發 → 驗收", icon: "M13 5l7 7-7 7M5 5l7 7-7 7" },
+          { name: "設計稿校對", desc: "線上即時校對，減少來回溝通", icon: "M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" },
+          { name: "溝通記錄", desc: "即時溝通與修改歷程完整保留", icon: "M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" },
+        ].map((item, i) => (
+          <FadeIn key={i} delay={0.25 + i * 0.1}>
+            <div style={{
+              padding: "28px 28px",
+              background: "linear-gradient(135deg, #FFFFFF 0%, #FAFAF8 100%)",
+              border: "1px solid #E8E6E0", borderRadius: 12,
+              boxShadow: "0 4px 16px rgba(0,0,0,0.05), inset 0 1px 0 rgba(255,255,255,0.8)",
+              transition: "transform 0.3s, box-shadow 0.3s", height: "100%",
+            }}
+              onMouseEnter={(e) => { e.currentTarget.style.transform = "translateY(-3px)"; e.currentTarget.style.boxShadow = "0 10px 28px rgba(154,136,102,0.12)"; }}
+              onMouseLeave={(e) => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "0 4px 16px rgba(0,0,0,0.05), inset 0 1px 0 rgba(255,255,255,0.8)"; }}
+            >
+              <div style={{
+                width: 44, height: 44, borderRadius: 10,
+                background: "linear-gradient(135deg, rgba(154,136,102,0.15) 0%, rgba(154,136,102,0.04) 100%)",
+                display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 16,
+              }}>
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9A8866" strokeWidth="1.5"><path d={item.icon} /></svg>
+              </div>
+              <p style={{ fontSize: 18, color: "#2C2C2C", fontWeight: 500, marginBottom: 6 }}>{item.name}</p>
+              <p style={{ fontSize: 14, color: "#666666", fontWeight: 300, lineHeight: 1.6 }}>{item.desc}</p>
             </div>
           </FadeIn>
-        </>
-      }
-      right={
-        <FadeIn delay={0.3}>
-          <div style={{
-            borderRadius: 12, overflow: "hidden",
-            boxShadow: "0 8px 32px rgba(0,0,0,0.1)",
-            border: "1px solid #E8E6E0",
-          }}>
-            <img
-              src="/screenshots/notion-project.jpg"
-              alt="Notion 專案管理畫面"
-              style={{ width: "100%", height: "auto", display: "block" }}
-            />
-          </div>
-        </FadeIn>
-      }
-    />
+        ))}
+      </div>
+    </ContentSlide>
   );
 }
 
