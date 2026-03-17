@@ -679,9 +679,9 @@ function ComparisonSlide() {
               background: "#2C2C2C",
             }}
           >
-            <div style={{ padding: "14px 24px", fontSize: 13, color: "rgba(255,255,255,0.6)", letterSpacing: "0.05em" }}>比較項目</div>
-            <div style={{ padding: "14px 24px", fontSize: 13, color: "rgba(255,255,255,0.6)", textAlign: "center", letterSpacing: "0.05em" }}>套版方案</div>
-            <div style={{ padding: "14px 24px", fontSize: 13, color: "#D4C5A0", textAlign: "center", letterSpacing: "0.05em", fontWeight: 500 }}>客製化</div>
+            <div style={{ padding: "14px 24px", fontSize: 14, color: "#FFFFFF", letterSpacing: "0.05em", fontWeight: 500 }}>比較項目</div>
+            <div style={{ padding: "14px 24px", fontSize: 14, color: "#FFFFFF", textAlign: "center", letterSpacing: "0.05em", fontWeight: 500 }}>套版方案</div>
+            <div style={{ padding: "14px 24px", fontSize: 14, color: "#E8D5A8", textAlign: "center", letterSpacing: "0.05em", fontWeight: 600 }}>客製化</div>
           </div>
           {/* Rows */}
           {rows.map((row, i) => (
