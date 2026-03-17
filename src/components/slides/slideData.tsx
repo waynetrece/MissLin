@@ -670,31 +670,33 @@ function ComparisonSlide() {
         </p>
       </FadeIn>
       <FadeIn delay={0.25}>
-        <div style={{ border: "1px solid #ECECEA", overflow: "hidden" }}>
+        <div style={{ borderRadius: 8, overflow: "hidden", boxShadow: "0 2px 12px rgba(0,0,0,0.06)" }}>
+          {/* Header */}
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "140px 1fr 1fr",
-              background: "#F5F5F0",
-              borderBottom: "1px solid #ECECEA",
+              gridTemplateColumns: "150px 1fr 1fr",
+              background: "#2C2C2C",
             }}
           >
-            <div style={{ padding: "12px 20px", fontSize: 14, color: "#444444" }}>比較項目</div>
-            <div style={{ padding: "12px 20px", fontSize: 14, color: "#444444", textAlign: "center" }}>套版方案</div>
-            <div style={{ padding: "12px 20px", fontSize: 14, color: "#9A8866", textAlign: "center" }}>客製化</div>
+            <div style={{ padding: "14px 24px", fontSize: 13, color: "rgba(255,255,255,0.6)", letterSpacing: "0.05em" }}>比較項目</div>
+            <div style={{ padding: "14px 24px", fontSize: 13, color: "rgba(255,255,255,0.6)", textAlign: "center", letterSpacing: "0.05em" }}>套版方案</div>
+            <div style={{ padding: "14px 24px", fontSize: 13, color: "#D4C5A0", textAlign: "center", letterSpacing: "0.05em", fontWeight: 500 }}>客製化</div>
           </div>
+          {/* Rows */}
           {rows.map((row, i) => (
             <div
               key={i}
               style={{
                 display: "grid",
-                gridTemplateColumns: "140px 1fr 1fr",
+                gridTemplateColumns: "150px 1fr 1fr",
                 borderBottom: i < rows.length - 1 ? "1px solid #ECECEA" : "none",
+                background: i % 2 === 0 ? "#FFFFFF" : "#FAFAF8",
               }}
             >
-              <div style={{ padding: "12px 20px", fontSize: 15, fontWeight: 500 }}>{row.item}</div>
-              <div style={{ padding: "12px 20px", fontSize: 14, color: "#2C2C2C", fontWeight: 300, textAlign: "center" }}>{row.t}</div>
-              <div style={{ padding: "12px 20px", fontSize: 14, textAlign: "center" }}>{row.c}</div>
+              <div style={{ padding: "14px 24px", fontSize: 14, fontWeight: 600, color: "#2C2C2C", display: "flex", alignItems: "center" }}>{row.item}</div>
+              <div style={{ padding: "14px 24px", fontSize: 14, color: "#666666", fontWeight: 300, textAlign: "center", display: "flex", alignItems: "center", justifyContent: "center" }}>{row.t}</div>
+              <div style={{ padding: "14px 24px", fontSize: 14, color: "#2C2C2C", fontWeight: 400, textAlign: "center", background: i % 2 === 0 ? "rgba(154,136,102,0.06)" : "rgba(154,136,102,0.1)", display: "flex", alignItems: "center", justifyContent: "center" }}>{row.c}</div>
             </div>
           ))}
         </div>
