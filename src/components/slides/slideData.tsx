@@ -146,10 +146,10 @@ function AboutPhilosophy() {
                   pointerEvents: "none",
                 }} />
                 <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 12 }}>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9A8866" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9A8866" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                     <path d={item.icon} />
                   </svg>
-                  <p style={{ color: "#9A8866", fontSize: 13, letterSpacing: "0.2em" }}>
+                  <p style={{ color: "#9A8866", fontSize: 16, fontWeight: 500, letterSpacing: "0.15em" }}>
                     {item.step}
                   </p>
                 </div>
