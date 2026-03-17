@@ -994,123 +994,114 @@ function FeaturesSlide() {
           <div style={{ width: 48, height: 1, background: "#9A8866" }} />
           <h2 style={{ fontFamily: "var(--font-serif)", fontSize: 18, fontWeight: 300 }}>Project Flow</h2>
         </div>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 12, marginBottom: 32 }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 12, marginBottom: 28 }}>
           {[
-            { step: "01", title: "瞭解需求", desc: "需求訪談、功能確認" },
-            { step: "02", title: "規劃確認", desc: "架構規劃、報價簽約" },
-            { step: "03", title: "設計製作", desc: "視覺設計、程式開發" },
-            { step: "04", title: "測試驗收", desc: "功能測試、內容上稿、上線" },
+            { step: "01", title: "瞭解需求", desc: "需求訪談、功能確認", icon: "M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" },
+            { step: "02", title: "規劃確認", desc: "架構規劃、報價簽約", icon: "M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" },
+            { step: "03", title: "設計製作", desc: "視覺設計、程式開發", icon: "M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" },
+            { step: "04", title: "測試驗收", desc: "功能測試、內容上稿、上線", icon: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" },
           ].map((item, i) => (
-            <div key={i} style={{ position: "relative", padding: "16px 20px", border: "1px solid #ECECEA" }}>
-              <p style={{ color: "#9A8866", fontSize: 12, letterSpacing: "0.15em", marginBottom: 6 }}>{item.step}</p>
-              <p style={{ fontFamily: "var(--font-serif)", fontSize: 16, marginBottom: 4 }}>{item.title}</p>
-              <p style={{ color: "#444444", fontSize: 12 }}>{item.desc}</p>
+            <div key={i} style={{
+              position: "relative", padding: "18px 20px",
+              background: "linear-gradient(135deg, #FFFFFF 0%, #F8F7F4 50%, #FFFFFF 100%)",
+              border: "1px solid #D8D6D0", borderRadius: 8,
+              boxShadow: "0 3px 10px rgba(0,0,0,0.06), inset 0 1px 0 rgba(255,255,255,0.9)",
+              overflow: "hidden", transition: "transform 0.3s, box-shadow 0.3s",
+            }}
+              onMouseEnter={(e) => { e.currentTarget.style.transform = "translateY(-3px)"; e.currentTarget.style.boxShadow = "0 8px 24px rgba(154,136,102,0.15)"; }}
+              onMouseLeave={(e) => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "0 3px 10px rgba(0,0,0,0.06), inset 0 1px 0 rgba(255,255,255,0.9)"; }}
+            >
+              <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: "50%", background: "linear-gradient(180deg, rgba(255,255,255,0.5) 0%, transparent 100%)", pointerEvents: "none" }} />
+              <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 8 }}>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9A8866" strokeWidth="1.5"><path d={item.icon} /></svg>
+                <p style={{ color: "#9A8866", fontSize: 16, fontWeight: 500, letterSpacing: "0.1em" }}>{item.step}</p>
+              </div>
+              <p style={{ fontFamily: "var(--font-serif)", fontSize: 16, marginBottom: 4, position: "relative" }}>{item.title}</p>
+              <p style={{ color: "#444444", fontSize: 12, position: "relative" }}>{item.desc}</p>
             </div>
           ))}
         </div>
       </FadeIn>
 
-      {/* 4 Feature Categories */}
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 28 }}>
-        <FadeIn delay={0.25}>
-          <div>
-            <div style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: 14 }}>
-              <div style={{ width: 48, height: 1, background: "#9A8866" }} />
-              <h2 style={{ fontFamily: "var(--font-serif)", fontSize: 18, fontWeight: 300 }}>SEO Optimization</h2>
-            </div>
-            <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-              {[
-                "每頁獨立 Title / Keywords / Description",
-                "自訂三層 URL 結構（類別/子類/商品）",
-                "Canonical URL 防重複內容",
-                "Google Analytics + Search Console",
-                "FB 像素追蹤（再行銷）",
-              ].map((t, i) => (
-                <div key={i} style={{ display: "flex", alignItems: "center", gap: 8 }}>
-                  <div style={{ width: 4, height: 4, borderRadius: 2, background: "#C4A77D", flexShrink: 0 }} />
-                  <p style={{ fontSize: 14, color: "#2C2C2C", fontWeight: 300 }}>{t}</p>
+      {/* 4 Feature Categories — card style */}
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
+        {[
+          { title: "SEO Optimization", icon: "M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z", delay: 0.25, items: [
+            "每頁獨立 Title / Keywords / Description",
+            "自訂三層 URL 結構（類別/子類/商品）",
+            "Canonical URL 防重複內容",
+            "Google Analytics + Search Console",
+            "FB 像素追蹤（再行銷）",
+          ]},
+          { title: "Security", icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z", delay: 0.3, items: [
+            "ISO 27001:2022 國際資安管理認證",
+            "SSL 全站 HTTPS 加密傳輸",
+            "WAF 網站應用程式防火牆",
+            "每日自動備份，可快速還原",
+            "後台權限分級管理",
+          ]},
+          { title: "Marketing Tools", icon: "M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z", delay: 0.35, items: [
+            "滿額折扣 / 限時特價 / 滿額免運",
+            "優惠碼管理與套用",
+            "電子報訂閱，定期發送活動通知",
+            "LINE 官方帳號串接（訂單通知、客服推播）",
+          ]},
+          { title: "Project Management", icon: "M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z", delay: 0.4, items: [
+            "Notion 透明進度追蹤",
+            "需求確認 → 設計 → 開發 → 驗收",
+            "設計稿線上校對",
+            "即時溝通與修改記錄",
+          ]},
+        ].map((section, si) => (
+          <FadeIn key={si} delay={section.delay}>
+            <div style={{
+              padding: "22px 24px",
+              background: "linear-gradient(135deg, #FFFFFF 0%, #FAFAF8 100%)",
+              border: "1px solid #E8E6E0", borderRadius: 10,
+              boxShadow: "0 3px 12px rgba(0,0,0,0.05), inset 0 1px 0 rgba(255,255,255,0.8)",
+              transition: "transform 0.3s, box-shadow 0.3s",
+            }}
+              onMouseEnter={(e) => { e.currentTarget.style.transform = "translateY(-3px)"; e.currentTarget.style.boxShadow = "0 8px 24px rgba(154,136,102,0.12)"; }}
+              onMouseLeave={(e) => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "0 3px 12px rgba(0,0,0,0.05), inset 0 1px 0 rgba(255,255,255,0.8)"; }}
+            >
+              <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 14 }}>
+                <div style={{
+                  width: 36, height: 36, borderRadius: 8,
+                  background: "linear-gradient(135deg, rgba(154,136,102,0.12) 0%, rgba(154,136,102,0.04) 100%)",
+                  display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0,
+                }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9A8866" strokeWidth="1.5"><path d={section.icon} /></svg>
                 </div>
-              ))}
+                <h2 style={{ fontFamily: "var(--font-serif)", fontSize: 17, fontWeight: 400 }}>{section.title}</h2>
+              </div>
+              <div style={{ display: "flex", flexDirection: "column", gap: 7 }}>
+                {section.items.map((t, i) => (
+                  <div key={i} style={{ display: "flex", alignItems: "center", gap: 10 }}>
+                    <div style={{ width: 5, height: 5, borderRadius: 3, background: "linear-gradient(135deg, #9A8866, #C4B48A)", flexShrink: 0 }} />
+                    <p style={{ fontSize: 14, color: "#2C2C2C", fontWeight: 300 }}>{t}</p>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
-        </FadeIn>
-        <FadeIn delay={0.3}>
-          <div>
-            <div style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: 14 }}>
-              <div style={{ width: 48, height: 1, background: "#9A8866" }} />
-              <h2 style={{ fontFamily: "var(--font-serif)", fontSize: 18, fontWeight: 300 }}>Security</h2>
-            </div>
-            <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-              {[
-                "ISO 27001:2022 國際資安管理認證",
-                "SSL 全站 HTTPS 加密傳輸",
-                "WAF 網站應用程式防火牆",
-                "每日自動備份，可快速還原",
-                "後台權限分級管理",
-              ].map((t, i) => (
-                <div key={i} style={{ display: "flex", alignItems: "center", gap: 8 }}>
-                  <div style={{ width: 4, height: 4, borderRadius: 2, background: "#C4A77D", flexShrink: 0 }} />
-                  <p style={{ fontSize: 14, color: "#2C2C2C", fontWeight: 300 }}>{t}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </FadeIn>
-        <FadeIn delay={0.35}>
-          <div>
-            <div style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: 14 }}>
-              <div style={{ width: 48, height: 1, background: "#9A8866" }} />
-              <h2 style={{ fontFamily: "var(--font-serif)", fontSize: 18, fontWeight: 300 }}>Marketing Tools</h2>
-            </div>
-            <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-              {[
-                "滿額折扣 / 限時特價 / 滿額免運",
-                "優惠碼管理與套用",
-                "電子報訂閱，定期發送活動通知",
-                "LINE 官方帳號串接（訂單通知、客服推播）",
-              ].map((t, i) => (
-                <div key={i} style={{ display: "flex", alignItems: "center", gap: 8 }}>
-                  <div style={{ width: 4, height: 4, borderRadius: 2, background: "#C4A77D", flexShrink: 0 }} />
-                  <p style={{ fontSize: 14, color: "#2C2C2C", fontWeight: 300 }}>{t}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </FadeIn>
-        <FadeIn delay={0.4}>
-          <div>
-            <div style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: 14 }}>
-              <div style={{ width: 48, height: 1, background: "#9A8866" }} />
-              <h2 style={{ fontFamily: "var(--font-serif)", fontSize: 18, fontWeight: 300 }}>Project Management</h2>
-            </div>
-            <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-              {[
-                "Notion 透明進度追蹤",
-                "需求確認 → 設計 → 開發 → 驗收",
-                "設計稿線上校對",
-                "即時溝通與修改記錄",
-              ].map((t, i) => (
-                <div key={i} style={{ display: "flex", alignItems: "center", gap: 8 }}>
-                  <div style={{ width: 4, height: 4, borderRadius: 2, background: "#C4A77D", flexShrink: 0 }} />
-                  <p style={{ fontSize: 14, color: "#2C2C2C", fontWeight: 300 }}>{t}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </FadeIn>
+          </FadeIn>
+        ))}
       </div>
 
       {/* Core values */}
       <FadeIn delay={0.5}>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 12, marginTop: 28 }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 12, marginTop: 24 }}>
           {[
             { title: "提升能見度", desc: "透過 SEO 讓更多人找到你的品牌" },
             { title: "建立品牌權威", desc: "專業的網站設計建立消費者信任" },
             { title: "長期投資效益", desc: "一次投資，持續為品牌帶來價值" },
           ].map((item, i) => (
-            <div key={i} style={{ padding: "16px 20px", background: "#0C0C0C", color: "#FFFFFF" }}>
-              <p style={{ fontFamily: "var(--font-serif)", fontSize: 18, color: "#C4A77D", marginBottom: 6 }}>{item.title}</p>
-              <p style={{ fontSize: 14, fontWeight: 300, opacity: 0.8 }}>{item.desc}</p>
+            <div key={i} style={{
+              padding: "18px 22px", borderRadius: 8,
+              background: "linear-gradient(135deg, #9A8866 0%, #8B7355 100%)", color: "#FFFFFF",
+              boxShadow: "0 4px 12px rgba(154,136,102,0.25)",
+            }}>
+              <p style={{ fontFamily: "var(--font-serif)", fontSize: 17, marginBottom: 6 }}>{item.title}</p>
+              <p style={{ fontSize: 13, fontWeight: 300, opacity: 0.9 }}>{item.desc}</p>
             </div>
           ))}
         </div>
