@@ -664,12 +664,7 @@ function ComparisonSlide() {
           套版 <span style={{ color: "#9A8866" }}>vs</span> 客製化
         </Heading>
       </FadeIn>
-      <FadeIn delay={0.15}>
-        <p style={{ fontSize: 18, color: "#2C2C2C", fontWeight: 300, marginBottom: 32 }}>
-          就像買衣服 — 套版是成衣，客製化是量身訂做。不是誰比較好，而是哪個更適合你的品牌。
-        </p>
-      </FadeIn>
-      <FadeIn delay={0.25}>
+      <FadeIn delay={0.2}>
         <div style={{ borderRadius: 8, overflow: "hidden", boxShadow: "0 2px 12px rgba(0,0,0,0.06)" }}>
           {/* Header */}
           <div
