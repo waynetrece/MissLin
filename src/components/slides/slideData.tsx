@@ -1,6 +1,7 @@
 "use client";
 
 import { ComponentType } from "react";
+import { motion } from "framer-motion";
 import {
   CenterSlide,
   ContentSlide,
@@ -733,116 +734,184 @@ function ArchitectureSlide() {
         </p>
       </FadeIn>
 
-      {/* Tree Diagram */}
-      <FadeIn delay={0.25}>
-        {/* Root Node */}
-        <div style={{ textAlign: "center" }}>
-          <div
-            style={{
-              display: "inline-block",
-              padding: "12px 40px",
-              background: "#0C0C0C",
-              color: "#FFFFFF",
-              fontFamily: "var(--font-serif)",
-              fontSize: 18,
-              letterSpacing: "0.05em",
-            }}
+      {/* Root Node */}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5, delay: 0.3 }}
+        style={{ textAlign: "center" }}
+      >
+        <div
+          style={{
+            display: "inline-block",
+            padding: "14px 48px",
+            background: "linear-gradient(135deg, #1A1A1A 0%, #2C2C2C 100%)",
+            color: "#FFFFFF",
+            fontFamily: "var(--font-serif)",
+            fontSize: 18,
+            letterSpacing: "0.08em",
+            borderRadius: 6,
+            boxShadow: "0 4px 16px rgba(0,0,0,0.15)",
+          }}
+        >
+          購物網站
+        </div>
+      </motion.div>
+
+      {/* Animated connection lines */}
+      <div style={{ position: "relative", height: 32 }}>
+        <motion.div
+          initial={{ scaleY: 0 }}
+          animate={{ scaleY: 1 }}
+          transition={{ duration: 0.3, delay: 0.6 }}
+          style={{
+            position: "absolute",
+            left: "50%",
+            top: 0,
+            width: 2,
+            height: "100%",
+            background: "linear-gradient(180deg, #9A8866, #C4B48A)",
+            transform: "translateX(-1px)",
+            transformOrigin: "top",
+          }}
+        />
+        <motion.div
+          initial={{ scaleX: 0 }}
+          animate={{ scaleX: 1 }}
+          transition={{ duration: 0.4, delay: 0.8 }}
+          style={{
+            position: "absolute",
+            left: "8.33%",
+            right: "8.33%",
+            bottom: 0,
+            height: 2,
+            background: "linear-gradient(90deg, #C4B48A, #9A8866, #C4B48A)",
+            transformOrigin: "center",
+          }}
+        />
+      </div>
+
+      {/* Module columns — staggered entry */}
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(6, 1fr)", gap: 8 }}>
+        {modules.map((m, i) => (
+          <motion.div
+            key={i}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 1.0 + i * 0.12 }}
+            style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
           >
-            購物網站
-          </div>
-        </div>
+            {/* Animated vertical connector */}
+            <motion.div
+              initial={{ scaleY: 0 }}
+              animate={{ scaleY: 1 }}
+              transition={{ duration: 0.2, delay: 0.9 + i * 0.1 }}
+              style={{ width: 2, height: 16, background: "linear-gradient(180deg, #C4B48A, #9A8866)", transformOrigin: "top" }}
+            />
 
-        {/* Vertical line from root + horizontal connector bar */}
-        <div style={{ position: "relative", height: 32 }}>
-          <div
-            style={{
-              position: "absolute",
-              left: "50%",
-              top: 0,
-              width: 2,
-              height: "100%",
-              background: "#9A8866",
-              transform: "translateX(-1px)",
-            }}
-          />
-          <div
-            style={{
-              position: "absolute",
-              left: "8.33%",
-              right: "8.33%",
-              bottom: 0,
-              height: 2,
-              background: "#9A8866",
-            }}
-          />
-        </div>
-
-        {/* Module columns */}
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(6, 1fr)", gap: 6 }}>
-          {modules.map((m, i) => (
-            <div key={i} style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-              {/* Vertical connector from horizontal bar */}
-              <div style={{ width: 2, height: 16, background: "#9A8866" }} />
-
-              {/* Module header box */}
-              <div
-                style={{
-                  width: "100%",
-                  padding: "10px 6px",
-                  border: "1px solid #9A8866",
-                  background: "rgba(154,136,102,0.06)",
-                  textAlign: "center",
-                }}
-              >
+            {/* Module header — glossy card with icon glow */}
+            <div
+              style={{
+                position: "relative",
+                width: "100%",
+                padding: "14px 6px",
+                background: "linear-gradient(135deg, #FFFFFF 0%, #F8F7F4 50%, #FFFFFF 100%)",
+                border: "1px solid #C4B48A",
+                borderRadius: "6px 6px 0 0",
+                textAlign: "center",
+                boxShadow: "0 2px 8px rgba(154,136,102,0.12), inset 0 1px 0 rgba(255,255,255,0.9)",
+                overflow: "hidden",
+                cursor: "default",
+                transition: "transform 0.3s, box-shadow 0.3s",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = "translateY(-2px)";
+                e.currentTarget.style.boxShadow = "0 6px 20px rgba(154,136,102,0.2), inset 0 1px 0 rgba(255,255,255,0.9)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = "translateY(0)";
+                e.currentTarget.style.boxShadow = "0 2px 8px rgba(154,136,102,0.12), inset 0 1px 0 rgba(255,255,255,0.9)";
+              }}
+            >
+              {/* Shimmer overlay */}
+              <div style={{
+                position: "absolute", top: 0, left: 0, right: 0, height: "50%",
+                background: "linear-gradient(180deg, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0) 100%)",
+                pointerEvents: "none",
+              }} />
+              {/* Icon with gold glow */}
+              <div style={{
+                width: 36, height: 36, borderRadius: "50%",
+                background: "radial-gradient(circle, rgba(154,136,102,0.15) 0%, rgba(154,136,102,0.03) 70%, transparent 100%)",
+                display: "flex", alignItems: "center", justifyContent: "center",
+                margin: "0 auto 6px",
+              }}>
                 <svg
-                  width="16"
-                  height="16"
+                  width="18"
+                  height="18"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="#9A8866"
                   strokeWidth="1.5"
-                  style={{ display: "block", margin: "0 auto 6px" }}
                 >
                   <path d={archIcons[m.icon]} />
                 </svg>
-                <p style={{ fontFamily: "var(--font-serif)", fontSize: 15 }}>{m.name}</p>
               </div>
-
-              {/* Sub-items */}
-              <div
-                style={{
-                  width: "100%",
-                  borderLeft: "1px solid #ECECEA",
-                  borderRight: "1px solid #ECECEA",
-                  borderBottom: "1px solid #ECECEA",
-                }}
-              >
-                {m.items.map((item, j) => (
-                  <div
-                    key={j}
-                    style={{
-                      padding: "6px 8px",
-                      fontSize: 13,
-                      color: "#2C2C2C",
-                      fontWeight: 300,
-                      textAlign: "center",
-                      borderBottom: j < m.items.length - 1 ? "1px solid #F5F5F3" : "none",
-                    }}
-                  >
-                    {item}
-                  </div>
-                ))}
-              </div>
+              <p style={{ fontFamily: "var(--font-serif)", fontSize: 15, position: "relative" }}>{m.name}</p>
             </div>
-          ))}
-        </div>
-      </FadeIn>
 
-      <FadeIn delay={0.5}>
-        <p style={{ marginTop: 20, fontSize: 13, color: "#444444" }}>
-          * 以上是通用架構，實際功能依客戶需求和預算調整
-        </p>
-      </FadeIn>
+            {/* Sub-items — glossy */}
+            <div
+              style={{
+                width: "100%",
+                background: "linear-gradient(180deg, #FFFFFF 0%, #FAFAF8 100%)",
+                border: "1px solid #E8E6E0",
+                borderTop: "none",
+                borderRadius: "0 0 6px 6px",
+                boxShadow: "0 2px 8px rgba(0,0,0,0.04)",
+                overflow: "hidden",
+                transition: "transform 0.3s, box-shadow 0.3s",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = "translateY(-2px)";
+                e.currentTarget.style.boxShadow = "0 6px 20px rgba(0,0,0,0.08)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = "translateY(0)";
+                e.currentTarget.style.boxShadow = "0 2px 8px rgba(0,0,0,0.04)";
+              }}
+            >
+              {m.items.map((item, j) => (
+                <div
+                  key={j}
+                  style={{
+                    padding: "7px 8px",
+                    fontSize: 13,
+                    color: "#2C2C2C",
+                    fontWeight: 300,
+                    textAlign: "center",
+                    borderBottom: j < m.items.length - 1 ? "1px solid #F0EEEA" : "none",
+                    transition: "background 0.2s",
+                  }}
+                  onMouseEnter={(e) => (e.currentTarget.style.background = "rgba(154,136,102,0.06)")}
+                  onMouseLeave={(e) => (e.currentTarget.style.background = "transparent")}
+                >
+                  {item}
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        ))}
+      </div>
+
+      <motion.p
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5, delay: 2.0 }}
+        style={{ marginTop: 20, fontSize: 13, color: "#444444" }}
+      >
+        * 以上是通用架構，實際功能依客戶需求和預算調整
+      </motion.p>
     </DenseSlide>
   );
 }
