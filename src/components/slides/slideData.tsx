@@ -590,41 +590,51 @@ function MarketKoreanJewelry() {
       right={
         <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
           <FadeIn delay={0.2}>
-            <a href="https://hei-jewelry.com" target="_blank" rel="noopener noreferrer"
-              style={{ display: "block", padding: 20, border: "1px solid #ECECEA", background: "#FFFFFF", textDecoration: "none", color: "inherit", transition: "border-color 0.5s" }}
+            <a href="https://heii.co.kr" target="_blank" rel="noopener noreferrer"
+              style={{ display: "block", border: "1px solid #ECECEA", background: "#FFFFFF", textDecoration: "none", color: "inherit", transition: "border-color 0.5s", overflow: "hidden" }}
               onMouseEnter={(e) => (e.currentTarget.style.borderColor = "#9A8866")}
               onMouseLeave={(e) => (e.currentTarget.style.borderColor = "#ECECEA")}
             >
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 6 }}>
-                <p style={{ color: "#9A8866", fontSize: 12, letterSpacing: "0.1em" }}>hei-jewelry.com</p>
-                <span style={{ fontSize: 11, color: "#9A8866", padding: "3px 8px", border: "1px solid rgba(154,136,102,0.3)" }}>
-                  創新設計
-                </span>
+              <div style={{ width: "100%", height: 140, overflow: "hidden" }}>
+                <img src="/screenshots/hei-jewelry.jpg" alt="HEI" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top" }} />
               </div>
-              <p style={{ fontFamily: "var(--font-serif)", fontSize: 24, marginBottom: 6 }}>HEI</p>
-              <p style={{ fontSize: 14, color: "#2C2C2C", fontWeight: 300, marginBottom: 6 }}>
-                排版有創意，柔和色調，模特兒穿搭照多
-              </p>
-              <p style={{ fontSize: 14, color: "#8B7355" }}>創新設計排版，可測試客戶接受度</p>
+              <div style={{ padding: "14px 20px 16px" }}>
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 6 }}>
+                  <p style={{ color: "#9A8866", fontSize: 12, letterSpacing: "0.1em" }}>heii.co.kr</p>
+                  <span style={{ fontSize: 11, color: "#9A8866", padding: "3px 8px", border: "1px solid rgba(154,136,102,0.3)" }}>
+                    創新設計
+                  </span>
+                </div>
+                <p style={{ fontFamily: "var(--font-serif)", fontSize: 22, marginBottom: 4 }}>HEI</p>
+                <p style={{ fontSize: 13, color: "#2C2C2C", fontWeight: 300, marginBottom: 4 }}>
+                  排版有創意，柔和色調，模特兒穿搭照多
+                </p>
+                <p style={{ fontSize: 13, color: "#8B7355" }}>創新設計排版，可測試客戶接受度</p>
+              </div>
             </a>
           </FadeIn>
           <FadeIn delay={0.35}>
             <a href="https://www.didierdubot.com" target="_blank" rel="noopener noreferrer"
-              style={{ display: "block", padding: 20, border: "1px solid #ECECEA", background: "#FFFFFF", textDecoration: "none", color: "inherit", transition: "border-color 0.5s" }}
+              style={{ display: "block", border: "1px solid #ECECEA", background: "#FFFFFF", textDecoration: "none", color: "inherit", transition: "border-color 0.5s", overflow: "hidden" }}
               onMouseEnter={(e) => (e.currentTarget.style.borderColor = "#9A8866")}
               onMouseLeave={(e) => (e.currentTarget.style.borderColor = "#ECECEA")}
             >
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 6 }}>
-                <p style={{ color: "#9A8866", fontSize: 12, letterSpacing: "0.1em" }}>didierdubot.com</p>
-                <span style={{ fontSize: 11, color: "#9A8866", padding: "3px 8px", border: "1px solid rgba(154,136,102,0.3)" }}>
-                  精品穩重
-                </span>
+              <div style={{ width: "100%", height: 140, overflow: "hidden" }}>
+                <img src="/screenshots/didierdubot.jpg" alt="DIDIER DUBOT" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top" }} />
               </div>
-              <p style={{ fontFamily: "var(--font-serif)", fontSize: 24, marginBottom: 6 }}>DIDIER DUBOT</p>
-              <p style={{ fontSize: 14, color: "#2C2C2C", fontWeight: 300, marginBottom: 6 }}>
-                精品珠寶路線，深色背景 + 金色點綴
-              </p>
-              <p style={{ fontSize: 14, color: "#8B7355" }}>精品穩重風格，與 HEI 做風格對照</p>
+              <div style={{ padding: "14px 20px 16px" }}>
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 6 }}>
+                  <p style={{ color: "#9A8866", fontSize: 12, letterSpacing: "0.1em" }}>didierdubot.com</p>
+                  <span style={{ fontSize: 11, color: "#9A8866", padding: "3px 8px", border: "1px solid rgba(154,136,102,0.3)" }}>
+                    精品穩重
+                  </span>
+                </div>
+                <p style={{ fontFamily: "var(--font-serif)", fontSize: 22, marginBottom: 4 }}>DIDIER DUBOT</p>
+                <p style={{ fontSize: 13, color: "#2C2C2C", fontWeight: 300, marginBottom: 4 }}>
+                  精品珠寶路線，深色背景 + 金色點綴
+                </p>
+                <p style={{ fontSize: 13, color: "#8B7355" }}>精品穩重風格，與 HEI 做風格對照</p>
+              </div>
             </a>
           </FadeIn>
         </div>
