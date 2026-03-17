@@ -1105,94 +1105,62 @@ function FeaturesTech() {
   );
 }
 
-// ===== Features Slide 3: Marketing + Management =====
+// ===== Features Slide 3: Project Management =====
 function FeaturesService() {
-  const categories = [
-    { title: "Marketing Tools", subtitle: "行銷工具", icon: "M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z", items: [
-      { name: "優惠活動", desc: "滿額折扣 / 限時特價 / 滿額免運" },
-      { name: "優惠碼系統", desc: "折扣碼管理與前台套用" },
-      { name: "電子報", desc: "收集 Email，定期發送活動通知" },
-      { name: "LINE 串接", desc: "官方帳號訂單通知、客服推播" },
-    ]},
-    { title: "Project Management", subtitle: "專案管理", icon: "M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z", items: [
-      { name: "Notion 進度追蹤", desc: "透明的專案管理，隨時掌握狀態" },
-      { name: "標準流程", desc: "需求確認 → 設計 → 開發 → 驗收" },
-      { name: "設計稿校對", desc: "線上即時校對，減少來回溝通" },
-      { name: "溝通記錄", desc: "即時溝通與修改歷程完整保留" },
-    ]},
-  ];
   return (
-    <ContentSlide>
-      <FadeIn>
-        <Label>Platform</Label>
-      </FadeIn>
-      <FadeIn delay={0.1}>
-        <Heading size="medium">行銷與管理</Heading>
-      </FadeIn>
-
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24, marginTop: 8 }}>
-        {categories.map((cat, ci) => (
-          <FadeIn key={ci} delay={0.2 + ci * 0.15}>
-            <div style={{
-              padding: "28px 28px",
-              background: "linear-gradient(135deg, #FFFFFF 0%, #FAFAF8 100%)",
-              border: "1px solid #E8E6E0", borderRadius: 12,
-              boxShadow: "0 4px 16px rgba(0,0,0,0.05), inset 0 1px 0 rgba(255,255,255,0.8)",
-              transition: "transform 0.3s, box-shadow 0.3s", height: "100%",
-            }}
-              onMouseEnter={(e) => { e.currentTarget.style.transform = "translateY(-3px)"; e.currentTarget.style.boxShadow = "0 10px 28px rgba(154,136,102,0.12)"; }}
-              onMouseLeave={(e) => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "0 4px 16px rgba(0,0,0,0.05), inset 0 1px 0 rgba(255,255,255,0.8)"; }}
-            >
-              <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 8 }}>
-                <div style={{
-                  width: 42, height: 42, borderRadius: 10,
-                  background: "linear-gradient(135deg, rgba(154,136,102,0.15) 0%, rgba(154,136,102,0.04) 100%)",
-                  display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0,
-                }}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9A8866" strokeWidth="1.5"><path d={cat.icon} /></svg>
-                </div>
-                <div>
-                  <h2 style={{ fontFamily: "var(--font-serif)", fontSize: 20, fontWeight: 400 }}>{cat.title}</h2>
-                  <p style={{ fontSize: 13, color: "#9A8866", fontWeight: 300 }}>{cat.subtitle}</p>
-                </div>
-              </div>
-              <div style={{ width: "100%", height: 1, background: "linear-gradient(90deg, #D8D0C0, transparent)", margin: "14px 0 18px" }} />
-              <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
-                {cat.items.map((item, i) => (
-                  <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: 12 }}>
-                    <div style={{ width: 6, height: 6, borderRadius: 3, background: "linear-gradient(135deg, #9A8866, #C4B48A)", flexShrink: 0, marginTop: 7 }} />
-                    <div>
-                      <p style={{ fontSize: 15, color: "#2C2C2C", fontWeight: 500, marginBottom: 2 }}>{item.name}</p>
-                      <p style={{ fontSize: 13, color: "#666666", fontWeight: 300 }}>{item.desc}</p>
-                    </div>
+    <SplitSlide
+      left={
+        <>
+          <FadeIn>
+            <Label>Project Management</Label>
+          </FadeIn>
+          <FadeIn delay={0.1}>
+            <Heading size="medium">專案管理</Heading>
+          </FadeIn>
+          <FadeIn delay={0.15}>
+            <GoldLine />
+          </FadeIn>
+          <FadeIn delay={0.2}>
+            <Subtext>
+              使用 Notion 作為專案管理工具，每個階段都有透明的追蹤記錄
+            </Subtext>
+          </FadeIn>
+          <FadeIn delay={0.3}>
+            <div style={{ marginTop: 28, display: "flex", flexDirection: "column", gap: 16 }}>
+              {[
+                { name: "Notion 進度追蹤", desc: "透明的專案管理，隨時掌握狀態" },
+                { name: "標準流程", desc: "需求確認 → 設計 → 開發 → 驗收" },
+                { name: "設計稿校對", desc: "線上即時校對，減少來回溝通" },
+                { name: "溝通記錄", desc: "即時溝通與修改歷程完整保留" },
+              ].map((item, i) => (
+                <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: 12 }}>
+                  <div style={{ width: 6, height: 6, borderRadius: 3, background: "linear-gradient(135deg, #9A8866, #C4B48A)", flexShrink: 0, marginTop: 8 }} />
+                  <div>
+                    <p style={{ fontSize: 16, color: "#2C2C2C", fontWeight: 500, marginBottom: 3 }}>{item.name}</p>
+                    <p style={{ fontSize: 14, color: "#666666", fontWeight: 300 }}>{item.desc}</p>
                   </div>
-                ))}
-              </div>
+                </div>
+              ))}
             </div>
           </FadeIn>
-        ))}
-      </div>
-
-      {/* Core values */}
-      <FadeIn delay={0.5}>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 14, marginTop: 32 }}>
-          {[
-            { title: "提升能見度", desc: "透過 SEO 讓更多人找到你的品牌" },
-            { title: "建立品牌權威", desc: "專業的網站設計建立消費者信任" },
-            { title: "長期投資效益", desc: "一次投資，持續為品牌帶來價值" },
-          ].map((item, i) => (
-            <div key={i} style={{
-              padding: "18px 22px", borderRadius: 8,
-              background: "linear-gradient(135deg, #9A8866 0%, #8B7355 100%)", color: "#FFFFFF",
-              boxShadow: "0 4px 12px rgba(154,136,102,0.25)",
-            }}>
-              <p style={{ fontFamily: "var(--font-serif)", fontSize: 17, marginBottom: 6 }}>{item.title}</p>
-              <p style={{ fontSize: 13, fontWeight: 300, opacity: 0.9 }}>{item.desc}</p>
-            </div>
-          ))}
-        </div>
-      </FadeIn>
-    </ContentSlide>
+        </>
+      }
+      right={
+        <FadeIn delay={0.3}>
+          <div style={{
+            borderRadius: 12, overflow: "hidden",
+            boxShadow: "0 8px 32px rgba(0,0,0,0.1)",
+            border: "1px solid #E8E6E0",
+          }}>
+            <img
+              src="/screenshots/notion-project.jpg"
+              alt="Notion 專案管理畫面"
+              style={{ width: "100%", height: "auto", display: "block" }}
+            />
+          </div>
+        </FadeIn>
+      }
+    />
   );
 }
 
