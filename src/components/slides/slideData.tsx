@@ -107,35 +107,52 @@ function AboutPhilosophy() {
           }}
         >
           {[
-            { step: "01", title: "聆聽", desc: "深入了解品牌核心與需求" },
-            { step: "02", title: "溝通", desc: "確認目標、釐清方向" },
-            { step: "03", title: "觀察", desc: "研究市場趨勢與競品" },
-            { step: "04", title: "設計", desc: "打造獨一無二的品牌網站" },
+            { step: "01", title: "聆聽", desc: "深入了解品牌核心與需求", icon: "M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" },
+            { step: "02", title: "溝通", desc: "確認目標、釐清方向", icon: "M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" },
+            { step: "03", title: "觀察", desc: "研究市場趨勢與競品", icon: "M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" },
+            { step: "04", title: "設計", desc: "打造獨一無二的品牌網站", icon: "M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" },
           ].map((item, i) => (
             <FadeIn key={i} delay={0.3 + i * 0.08}>
               <div
                 style={{
+                  position: "relative",
                   padding: 28,
-                  background: "#FFFFFF",
-                  border: "1px solid #E0E0DC",
-                  boxShadow: "0 2px 8px rgba(0,0,0,0.06)",
+                  background: "linear-gradient(135deg, #FFFFFF 0%, #F8F7F4 50%, #FFFFFF 100%)",
+                  border: "1px solid #D8D6D0",
+                  boxShadow: "0 4px 12px rgba(0,0,0,0.08), inset 0 1px 0 rgba(255,255,255,0.9)",
                   transition: "all 0.4s ease",
                   cursor: "default",
+                  overflow: "hidden",
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.borderColor = "#9A8866";
-                  e.currentTarget.style.boxShadow = "0 6px 20px rgba(154,136,102,0.15)";
+                  e.currentTarget.style.boxShadow = "0 8px 24px rgba(154,136,102,0.18), inset 0 1px 0 rgba(255,255,255,0.9)";
                   e.currentTarget.style.transform = "translateY(-4px)";
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor = "#E0E0DC";
-                  e.currentTarget.style.boxShadow = "0 2px 8px rgba(0,0,0,0.06)";
+                  e.currentTarget.style.borderColor = "#D8D6D0";
+                  e.currentTarget.style.boxShadow = "0 4px 12px rgba(0,0,0,0.08), inset 0 1px 0 rgba(255,255,255,0.9)";
                   e.currentTarget.style.transform = "translateY(0)";
                 }}
               >
-                <p style={{ color: "#9A8866", fontSize: 13, letterSpacing: "0.2em", marginBottom: 12 }}>
-                  {item.step}
-                </p>
+                {/* Shimmer overlay */}
+                <div style={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  height: "50%",
+                  background: "linear-gradient(180deg, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 100%)",
+                  pointerEvents: "none",
+                }} />
+                <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 12 }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9A8866" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d={item.icon} />
+                  </svg>
+                  <p style={{ color: "#9A8866", fontSize: 13, letterSpacing: "0.2em" }}>
+                    {item.step}
+                  </p>
+                </div>
                 <p style={{ fontFamily: "var(--font-serif)", fontSize: 26, marginBottom: 8 }}>
                   {item.title}
                 </p>
@@ -159,20 +176,46 @@ function AboutPhilosophy() {
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 14 }}>
             {[
-              { name: "業務部", desc: "需求訪談、專案管理" },
-              { name: "設計部", desc: "視覺設計、UI/UX 規劃" },
-              { name: "程式部", desc: "前後端開發、系統整合" },
-              { name: "系統部", desc: "主機管理、資安防護" },
-              { name: "行銷部", desc: "SEO 優化、數位行銷" },
-              { name: "客服部", desc: "售後服務、技術支援" },
+              { name: "業務部", desc: "需求訪談、專案管理", icon: "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" },
+              { name: "設計部", desc: "視覺設計、UI/UX 規劃", icon: "M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" },
+              { name: "程式部", desc: "前後端開發、系統整合", icon: "M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" },
+              { name: "系統部", desc: "主機管理、資安防護", icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" },
+              { name: "行銷部", desc: "SEO 優化、數位行銷", icon: "M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" },
+              { name: "客服部", desc: "售後服務、技術支援", icon: "M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" },
             ].map((dept, i) => (
               <div key={i} style={{
-                padding: "14px 18px",
+                position: "relative",
+                padding: "16px 20px",
                 borderLeft: "3px solid #9A8866",
-                background: "#FFFFFF",
-                boxShadow: "0 1px 4px rgba(0,0,0,0.06)",
-              }}>
-                <p style={{ fontSize: 15, fontWeight: 600, marginBottom: 4 }}>{dept.name}</p>
+                background: "linear-gradient(135deg, #FFFFFF 0%, #F9F8F5 50%, #FFFFFF 100%)",
+                boxShadow: "0 3px 10px rgba(0,0,0,0.07), inset 0 1px 0 rgba(255,255,255,0.8)",
+                overflow: "hidden",
+                transition: "all 0.3s ease",
+              }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.boxShadow = "0 6px 16px rgba(154,136,102,0.14), inset 0 1px 0 rgba(255,255,255,0.8)";
+                  e.currentTarget.style.transform = "translateY(-2px)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.boxShadow = "0 3px 10px rgba(0,0,0,0.07), inset 0 1px 0 rgba(255,255,255,0.8)";
+                  e.currentTarget.style.transform = "translateY(0)";
+                }}
+              >
+                <div style={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  height: "45%",
+                  background: "linear-gradient(180deg, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0) 100%)",
+                  pointerEvents: "none",
+                }} />
+                <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 6 }}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9A8866" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d={dept.icon} />
+                  </svg>
+                  <p style={{ fontSize: 15, fontWeight: 600 }}>{dept.name}</p>
+                </div>
                 <p style={{ fontSize: 14, color: "#444444" }}>{dept.desc}</p>
               </div>
             ))}
