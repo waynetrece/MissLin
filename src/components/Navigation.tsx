@@ -38,7 +38,7 @@ export default function Navigation({
           <div style={{ width: 48, height: 1, background: "#9A8866" }} />
           <span
             className="hidden sm:block text-sm tracking-wider"
-            style={{ color: "#555555" }}
+            style={{ color: "#444444" }}
           >
             Web Design & Development
           </span>

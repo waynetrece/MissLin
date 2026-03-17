@@ -77,7 +77,7 @@ function AboutHero() {
               <p style={{ fontSize: 14, color: "#2C2C2C", marginBottom: 2 }}>
                 {s.l}
               </p>
-              <p style={{ fontSize: 12, color: "#555555", letterSpacing: "0.05em" }}>
+              <p style={{ fontSize: 12, color: "#444444", letterSpacing: "0.05em" }}>
                 {s.sub}
               </p>
             </div>
@@ -146,7 +146,7 @@ function AboutPhilosophy() {
               Professional Team
             </h2>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 12 }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 14 }}>
             {[
               { name: "業務部", desc: "需求訪談、專案管理" },
               { name: "設計部", desc: "視覺設計、UI/UX 規劃" },
@@ -155,9 +155,14 @@ function AboutPhilosophy() {
               { name: "行銷部", desc: "SEO 優化、數位行銷" },
               { name: "客服部", desc: "售後服務、技術支援" },
             ].map((dept, i) => (
-              <div key={i} style={{ padding: "12px 16px", borderLeft: "2px solid rgba(154,136,102,0.3)" }}>
-                <p style={{ fontSize: 15, fontWeight: 500, marginBottom: 2 }}>{dept.name}</p>
-                <p style={{ fontSize: 13, color: "#555555" }}>{dept.desc}</p>
+              <div key={i} style={{
+                padding: "14px 18px",
+                borderLeft: "3px solid #9A8866",
+                background: "#FFFFFF",
+                boxShadow: "0 1px 4px rgba(0,0,0,0.06)",
+              }}>
+                <p style={{ fontSize: 15, fontWeight: 600, marginBottom: 4 }}>{dept.name}</p>
+                <p style={{ fontSize: 14, color: "#444444" }}>{dept.desc}</p>
               </div>
             ))}
           </div>
@@ -166,11 +171,27 @@ function AboutPhilosophy() {
 
       {/* Credentials */}
       <FadeIn delay={0.75}>
-        <div style={{ display: "flex", gap: 16, marginTop: 28 }}>
-          {["ISO 27001:2022", "台北 / 台中 / 台南", "政府機關 / 醫療 / 學術合作"].map((t, i) => (
+        <div style={{ display: "flex", flexWrap: "wrap", gap: 12, marginTop: 28 }}>
+          {[
+            "ISO 27001:2022 資安認證",
+            "28 年品牌歷史",
+            "6,000+ 企業客戶",
+            "台北 / 台中 / 台南",
+            "政府機關 / 醫療 / 學術合作",
+            "自建機房 24/7 監控",
+          ].map((t, i) => (
             <span
               key={i}
-              style={{ padding: "8px 16px", border: "1px solid #ECECEA", fontSize: 14, color: "#2C2C2C" }}
+              style={{
+                padding: "10px 20px",
+                background: "#FFFFFF",
+                border: "1px solid #D8D8D4",
+                borderRadius: 4,
+                boxShadow: "0 2px 6px rgba(0,0,0,0.06)",
+                fontSize: 14,
+                color: "#2C2C2C",
+                fontWeight: 400,
+              }}
             >
               {t}
             </span>
@@ -260,7 +281,7 @@ function PortfolioGrid() {
                 <p style={{ fontFamily: "var(--font-serif)", fontSize: 24, marginBottom: 4 }}>
                   {item.name}
                 </p>
-                <p style={{ color: "#555555", fontSize: 13, marginBottom: 6 }}>{item.type}</p>
+                <p style={{ color: "#444444", fontSize: 13, marginBottom: 6 }}>{item.type}</p>
                 <p style={{ color: "#2C2C2C", fontSize: 14, fontWeight: 300, marginBottom: 10 }}>{item.style}</p>
                 <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
                   {item.features.map((f, j) => (
@@ -594,8 +615,8 @@ function ComparisonSlide() {
               borderBottom: "1px solid #ECECEA",
             }}
           >
-            <div style={{ padding: "12px 20px", fontSize: 14, color: "#555555" }}>比較項目</div>
-            <div style={{ padding: "12px 20px", fontSize: 14, color: "#555555", textAlign: "center" }}>套版方案</div>
+            <div style={{ padding: "12px 20px", fontSize: 14, color: "#444444" }}>比較項目</div>
+            <div style={{ padding: "12px 20px", fontSize: 14, color: "#444444", textAlign: "center" }}>套版方案</div>
             <div style={{ padding: "12px 20px", fontSize: 14, color: "#9A8866", textAlign: "center" }}>客製化</div>
           </div>
           {rows.map((row, i) => (
@@ -757,7 +778,7 @@ function ArchitectureSlide() {
       </FadeIn>
 
       <FadeIn delay={0.5}>
-        <p style={{ marginTop: 20, fontSize: 13, color: "#555555" }}>
+        <p style={{ marginTop: 20, fontSize: 13, color: "#444444" }}>
           * 以上是通用架構，實際功能依客戶需求和預算調整
         </p>
       </FadeIn>
@@ -853,7 +874,7 @@ function FeaturesSlide() {
             <div key={i} style={{ position: "relative", padding: "16px 20px", border: "1px solid #ECECEA" }}>
               <p style={{ color: "#9A8866", fontSize: 12, letterSpacing: "0.15em", marginBottom: 6 }}>{item.step}</p>
               <p style={{ fontFamily: "var(--font-serif)", fontSize: 16, marginBottom: 4 }}>{item.title}</p>
-              <p style={{ color: "#555555", fontSize: 12 }}>{item.desc}</p>
+              <p style={{ color: "#444444", fontSize: 12 }}>{item.desc}</p>
             </div>
           ))}
         </div>
