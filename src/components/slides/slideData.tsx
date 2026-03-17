@@ -268,19 +268,19 @@ function PortfolioGrid() {
       name: "桂冠食品", url: "laurel.com.tw", fullUrl: "https://www.laurel.com.tw",
       type: "冷凍食品 / 線上商城", style: "清爽現代，白底 + 高品質產品照",
       features: ["食譜內容整合", "線上購物", "品牌活動專區"],
-      screenshot: null as string | null,
+      screenshot: "/screenshots/laurel.jpg",
     },
     {
       name: "寵愛女人", url: "lovetowoman.com", fullUrl: "https://www.lovetowoman.com",
       type: "精品二手交易", style: "白底 + 紫色系，分類極細",
       features: ["直購 + 競標雙模式", "精品鑑定", "會員系統"],
-      screenshot: null as string | null,
+      screenshot: "/screenshots/lovetowoman.jpg",
     },
     {
       name: "荃贏全美", url: "allwealth.iware.com.tw", fullUrl: "https://allwealth.iware.com.tw/html/",
       type: "保健食品", style: "白底清爽，強調信任感",
       features: ["數字動畫", "顧客見證", "產品線完整"],
-      screenshot: null as string | null,
+      screenshot: "/screenshots/allwealth.jpg",
     },
   ];
   return (
