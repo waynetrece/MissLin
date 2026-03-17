@@ -58,7 +58,7 @@ function AboutHero() {
           }}
         >
           {[
-            { n: "28+", l: "年經驗", sub: "Since 1996" },
+            { n: "30+", l: "年經驗", sub: "Since 1996" },
             { n: "6,000", l: "家客戶", sub: "Clients" },
             { n: "32", l: "位團隊", sub: "Team Members" },
             { n: "3", l: "處據點", sub: "Offices" },
@@ -116,11 +116,22 @@ function AboutPhilosophy() {
               <div
                 style={{
                   padding: 28,
-                  border: "1px solid #ECECEA",
-                  transition: "border-color 0.5s",
+                  background: "#FFFFFF",
+                  border: "1px solid #E0E0DC",
+                  boxShadow: "0 2px 8px rgba(0,0,0,0.06)",
+                  transition: "all 0.4s ease",
+                  cursor: "default",
                 }}
-                onMouseEnter={(e) => (e.currentTarget.style.borderColor = "#9A8866")}
-                onMouseLeave={(e) => (e.currentTarget.style.borderColor = "#ECECEA")}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.borderColor = "#9A8866";
+                  e.currentTarget.style.boxShadow = "0 6px 20px rgba(154,136,102,0.15)";
+                  e.currentTarget.style.transform = "translateY(-4px)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.borderColor = "#E0E0DC";
+                  e.currentTarget.style.boxShadow = "0 2px 8px rgba(0,0,0,0.06)";
+                  e.currentTarget.style.transform = "translateY(0)";
+                }}
               >
                 <p style={{ color: "#9A8866", fontSize: 13, letterSpacing: "0.2em", marginBottom: 12 }}>
                   {item.step}
@@ -174,7 +185,7 @@ function AboutPhilosophy() {
         <div style={{ display: "flex", flexWrap: "wrap", gap: 12, marginTop: 28 }}>
           {[
             "ISO 27001:2022 資安認證",
-            "28 年品牌歷史",
+            "30 年品牌歷史",
             "6,000+ 企業客戶",
             "台北 / 台中 / 台南",
             "政府機關 / 醫療 / 學術合作",
