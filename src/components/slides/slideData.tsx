@@ -42,7 +42,7 @@ function AboutHero() {
         <GoldLineCentered />
       </FadeIn>
       <FadeIn delay={0.45}>
-        <p style={{ fontSize: 20, color: "#3D3D3D", fontWeight: 300, lineHeight: 2 }}>
+        <p style={{ fontSize: 22, color: "#2C2C2C", fontWeight: 300, lineHeight: 2 }}>
           自 1996 年成立以來，專注客製化網站設計與開發
           <br />
           我們相信好的網站，來自深入理解每個品牌的故事
@@ -74,10 +74,10 @@ function AboutHero() {
               >
                 {s.n}
               </p>
-              <p style={{ fontSize: 13, color: "#2C2C2C", marginBottom: 2 }}>
+              <p style={{ fontSize: 14, color: "#2C2C2C", marginBottom: 2 }}>
                 {s.l}
               </p>
-              <p style={{ fontSize: 11, color: "#707070", letterSpacing: "0.05em" }}>
+              <p style={{ fontSize: 12, color: "#555555", letterSpacing: "0.05em" }}>
                 {s.sub}
               </p>
             </div>
@@ -122,13 +122,13 @@ function AboutPhilosophy() {
                 onMouseEnter={(e) => (e.currentTarget.style.borderColor = "#9A8866")}
                 onMouseLeave={(e) => (e.currentTarget.style.borderColor = "#ECECEA")}
               >
-                <p style={{ color: "#9A8866", fontSize: 12, letterSpacing: "0.2em", marginBottom: 12 }}>
+                <p style={{ color: "#9A8866", fontSize: 13, letterSpacing: "0.2em", marginBottom: 12 }}>
                   {item.step}
                 </p>
-                <p style={{ fontFamily: "var(--font-serif)", fontSize: 24, marginBottom: 8 }}>
+                <p style={{ fontFamily: "var(--font-serif)", fontSize: 26, marginBottom: 8 }}>
                   {item.title}
                 </p>
-                <p style={{ color: "#3D3D3D", fontSize: 13, fontWeight: 300 }}>
+                <p style={{ color: "#2C2C2C", fontSize: 14, fontWeight: 300 }}>
                   {item.desc}
                 </p>
               </div>
@@ -142,7 +142,7 @@ function AboutPhilosophy() {
         <div style={{ marginTop: 40 }}>
           <div style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: 20 }}>
             <div style={{ width: 48, height: 1, background: "#9A8866" }} />
-            <h2 style={{ fontFamily: "var(--font-serif)", fontSize: 20, fontWeight: 300 }}>
+            <h2 style={{ fontFamily: "var(--font-serif)", fontSize: 22, fontWeight: 300 }}>
               Professional Team
             </h2>
           </div>
@@ -156,8 +156,8 @@ function AboutPhilosophy() {
               { name: "客服部", desc: "售後服務、技術支援" },
             ].map((dept, i) => (
               <div key={i} style={{ padding: "12px 16px", borderLeft: "2px solid rgba(154,136,102,0.3)" }}>
-                <p style={{ fontSize: 14, fontWeight: 500, marginBottom: 2 }}>{dept.name}</p>
-                <p style={{ fontSize: 12, color: "#707070" }}>{dept.desc}</p>
+                <p style={{ fontSize: 15, fontWeight: 500, marginBottom: 2 }}>{dept.name}</p>
+                <p style={{ fontSize: 13, color: "#555555" }}>{dept.desc}</p>
               </div>
             ))}
           </div>
@@ -170,7 +170,7 @@ function AboutPhilosophy() {
           {["ISO 27001:2022", "台北 / 台中 / 台南", "政府機關 / 醫療 / 學術合作"].map((t, i) => (
             <span
               key={i}
-              style={{ padding: "8px 16px", border: "1px solid #ECECEA", fontSize: 13, color: "#3D3D3D" }}
+              style={{ padding: "8px 16px", border: "1px solid #ECECEA", fontSize: 14, color: "#2C2C2C" }}
             >
               {t}
             </span>
@@ -217,7 +217,7 @@ function PortfolioGrid() {
         <Heading size="medium">作品案例</Heading>
       </FadeIn>
       <FadeIn delay={0.15}>
-        <p style={{ fontSize: 16, color: "#3D3D3D", fontWeight: 300, marginBottom: 24 }}>
+        <p style={{ fontSize: 18, color: "#2C2C2C", fontWeight: 300, marginBottom: 24 }}>
           每個作品都是根據客戶的品牌定位量身打造，風格完全依客戶的想法調整
         </p>
       </FadeIn>
@@ -254,17 +254,17 @@ function PortfolioGrid() {
                 />
               )}
               <div style={{ padding: "16px 24px 20px" }}>
-                <p style={{ color: "#9A8866", fontSize: 11, letterSpacing: "0.1em", marginBottom: 8 }}>
+                <p style={{ color: "#9A8866", fontSize: 12, letterSpacing: "0.1em", marginBottom: 8 }}>
                   {item.url}
                 </p>
-                <p style={{ fontFamily: "var(--font-serif)", fontSize: 22, marginBottom: 4 }}>
+                <p style={{ fontFamily: "var(--font-serif)", fontSize: 24, marginBottom: 4 }}>
                   {item.name}
                 </p>
-                <p style={{ color: "#707070", fontSize: 12, marginBottom: 6 }}>{item.type}</p>
-                <p style={{ color: "#3D3D3D", fontSize: 13, fontWeight: 300, marginBottom: 10 }}>{item.style}</p>
+                <p style={{ color: "#555555", fontSize: 13, marginBottom: 6 }}>{item.type}</p>
+                <p style={{ color: "#2C2C2C", fontSize: 14, fontWeight: 300, marginBottom: 10 }}>{item.style}</p>
                 <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
                   {item.features.map((f, j) => (
-                    <span key={j} style={{ padding: "4px 10px", fontSize: 11, color: "#3D3D3D", border: "1px solid #ECECEA" }}>
+                    <span key={j} style={{ padding: "4px 10px", fontSize: 12, color: "#2C2C2C", border: "1px solid #ECECEA" }}>
                       {f}
                     </span>
                   ))}
@@ -281,8 +281,8 @@ function PortfolioGrid() {
             padding: "14px 20px",
             borderLeft: "2px solid rgba(154,136,102,0.3)",
             background: "#F5F5F0",
-            fontSize: 14,
-            color: "#3D3D3D",
+            fontSize: 15,
+            color: "#2C2C2C",
             fontWeight: 300,
           }}
         >
@@ -322,7 +322,7 @@ function MarketTaiwan() {
                 padding: "16px 24px",
                 borderLeft: "2px solid rgba(154,136,102,0.3)",
                 background: "#F5F5F0",
-                fontSize: 14,
+                fontSize: 15,
                 color: "#8B7355",
                 fontWeight: 300,
                 lineHeight: 1.8,
@@ -364,13 +364,13 @@ function MarketTaiwan() {
                     <img src={b.screenshot} alt={b.name} style={{ width: "100%", height: 100, objectFit: "cover", objectPosition: "top", display: "block" }} />
                   )}
                   <div style={{ padding: b.screenshot ? "10px 16px 14px" : "16px 20px" }}>
-                    <p style={{ color: "#9A8866", fontSize: 11, letterSpacing: "0.1em", marginBottom: 6 }}>
+                    <p style={{ color: "#9A8866", fontSize: 12, letterSpacing: "0.1em", marginBottom: 6 }}>
                       {b.url}
                     </p>
                     <p style={{ fontFamily: "var(--font-serif)", fontSize: 18, marginBottom: 4 }}>
                       {b.name}
                     </p>
-                    <p style={{ fontSize: 12, color: "#3D3D3D", fontWeight: 300 }}>
+                    <p style={{ fontSize: 13, color: "#2C2C2C", fontWeight: 300 }}>
                       {b.desc}
                     </p>
                   </div>
@@ -410,7 +410,7 @@ function MarketKoreanSkincare() {
                 padding: "16px 24px",
                 borderLeft: "2px solid rgba(154,136,102,0.3)",
                 background: "#F5F5F0",
-                fontSize: 14,
+                fontSize: 15,
                 color: "#8B7355",
                 fontWeight: 300,
                 lineHeight: 1.8,
@@ -434,13 +434,13 @@ function MarketKoreanSkincare() {
               <img src="/screenshots/tamburins.jpg" alt="TAMBURINS" style={{ width: "100%", height: 120, objectFit: "cover", objectPosition: "top", display: "block" }} />
               <div style={{ padding: "12px 16px 16px" }}>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 6 }}>
-                  <p style={{ color: "#9A8866", fontSize: 11, letterSpacing: "0.1em" }}>tamburins.com</p>
-                  <span style={{ fontSize: 10, color: "#9A8866", padding: "3px 8px", border: "1px solid rgba(154,136,102,0.3)" }}>
+                  <p style={{ color: "#9A8866", fontSize: 12, letterSpacing: "0.1em" }}>tamburins.com</p>
+                  <span style={{ fontSize: 11, color: "#9A8866", padding: "3px 8px", border: "1px solid rgba(154,136,102,0.3)" }}>
                     質感標竿
                   </span>
                 </div>
-                <p style={{ fontFamily: "var(--font-serif)", fontSize: 20, marginBottom: 4 }}>TAMBURINS</p>
-                <p style={{ fontSize: 12, color: "#3D3D3D", fontWeight: 300 }}>
+                <p style={{ fontFamily: "var(--font-serif)", fontSize: 22, marginBottom: 4 }}>TAMBURINS</p>
+                <p style={{ fontSize: 13, color: "#2C2C2C", fontWeight: 300 }}>
                   極簡藝術風，大量留白，產品攝影像藝術品
                 </p>
               </div>
@@ -455,13 +455,13 @@ function MarketKoreanSkincare() {
               <img src="/screenshots/nonfiction.jpg" alt="NONFICTION" style={{ width: "100%", height: 120, objectFit: "cover", objectPosition: "top", display: "block" }} />
               <div style={{ padding: "12px 16px 16px" }}>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 6 }}>
-                  <p style={{ color: "#9A8866", fontSize: 11, letterSpacing: "0.1em" }}>nonfiction.kr</p>
-                  <span style={{ fontSize: 10, color: "#9A8866", padding: "3px 8px", border: "1px solid rgba(154,136,102,0.3)" }}>
+                  <p style={{ color: "#9A8866", fontSize: 12, letterSpacing: "0.1em" }}>nonfiction.kr</p>
+                  <span style={{ fontSize: 11, color: "#9A8866", padding: "3px 8px", border: "1px solid rgba(154,136,102,0.3)" }}>
                     呼吸感
                   </span>
                 </div>
-                <p style={{ fontFamily: "var(--font-serif)", fontSize: 20, marginBottom: 4 }}>NONFICTION</p>
-                <p style={{ fontSize: 12, color: "#3D3D3D", fontWeight: 300 }}>
+                <p style={{ fontFamily: "var(--font-serif)", fontSize: 22, marginBottom: 4 }}>NONFICTION</p>
+                <p style={{ fontSize: 13, color: "#2C2C2C", fontWeight: 300 }}>
                   乾淨俐落，米白 + 深棕色調，文青質感
                 </p>
               </div>
@@ -499,7 +499,7 @@ function MarketKoreanJewelry() {
                 padding: "16px 24px",
                 borderLeft: "2px solid rgba(154,136,102,0.3)",
                 background: "#F5F5F0",
-                fontSize: 14,
+                fontSize: 15,
                 color: "#8B7355",
                 fontWeight: 300,
                 lineHeight: 1.8,
@@ -521,16 +521,16 @@ function MarketKoreanJewelry() {
               onMouseLeave={(e) => (e.currentTarget.style.borderColor = "#ECECEA")}
             >
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 6 }}>
-                <p style={{ color: "#9A8866", fontSize: 11, letterSpacing: "0.1em" }}>hei-jewelry.com</p>
-                <span style={{ fontSize: 10, color: "#9A8866", padding: "3px 8px", border: "1px solid rgba(154,136,102,0.3)" }}>
+                <p style={{ color: "#9A8866", fontSize: 12, letterSpacing: "0.1em" }}>hei-jewelry.com</p>
+                <span style={{ fontSize: 11, color: "#9A8866", padding: "3px 8px", border: "1px solid rgba(154,136,102,0.3)" }}>
                   創新設計
                 </span>
               </div>
-              <p style={{ fontFamily: "var(--font-serif)", fontSize: 22, marginBottom: 6 }}>HEI</p>
-              <p style={{ fontSize: 13, color: "#3D3D3D", fontWeight: 300, marginBottom: 6 }}>
+              <p style={{ fontFamily: "var(--font-serif)", fontSize: 24, marginBottom: 6 }}>HEI</p>
+              <p style={{ fontSize: 14, color: "#2C2C2C", fontWeight: 300, marginBottom: 6 }}>
                 排版有創意，柔和色調，模特兒穿搭照多
               </p>
-              <p style={{ fontSize: 13, color: "#8B7355" }}>創新設計排版，可測試客戶接受度</p>
+              <p style={{ fontSize: 14, color: "#8B7355" }}>創新設計排版，可測試客戶接受度</p>
             </a>
           </FadeIn>
           <FadeIn delay={0.35}>
@@ -540,16 +540,16 @@ function MarketKoreanJewelry() {
               onMouseLeave={(e) => (e.currentTarget.style.borderColor = "#ECECEA")}
             >
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 6 }}>
-                <p style={{ color: "#9A8866", fontSize: 11, letterSpacing: "0.1em" }}>didierdubot.com</p>
-                <span style={{ fontSize: 10, color: "#9A8866", padding: "3px 8px", border: "1px solid rgba(154,136,102,0.3)" }}>
+                <p style={{ color: "#9A8866", fontSize: 12, letterSpacing: "0.1em" }}>didierdubot.com</p>
+                <span style={{ fontSize: 11, color: "#9A8866", padding: "3px 8px", border: "1px solid rgba(154,136,102,0.3)" }}>
                   精品穩重
                 </span>
               </div>
-              <p style={{ fontFamily: "var(--font-serif)", fontSize: 22, marginBottom: 6 }}>DIDIER DUBOT</p>
-              <p style={{ fontSize: 13, color: "#3D3D3D", fontWeight: 300, marginBottom: 6 }}>
+              <p style={{ fontFamily: "var(--font-serif)", fontSize: 24, marginBottom: 6 }}>DIDIER DUBOT</p>
+              <p style={{ fontSize: 14, color: "#2C2C2C", fontWeight: 300, marginBottom: 6 }}>
                 精品珠寶路線，深色背景 + 金色點綴
               </p>
-              <p style={{ fontSize: 13, color: "#8B7355" }}>精品穩重風格，與 HEI 做風格對照</p>
+              <p style={{ fontSize: 14, color: "#8B7355" }}>精品穩重風格，與 HEI 做風格對照</p>
             </a>
           </FadeIn>
         </div>
@@ -580,7 +580,7 @@ function ComparisonSlide() {
         </Heading>
       </FadeIn>
       <FadeIn delay={0.15}>
-        <p style={{ fontSize: 16, color: "#3D3D3D", fontWeight: 300, marginBottom: 32 }}>
+        <p style={{ fontSize: 18, color: "#2C2C2C", fontWeight: 300, marginBottom: 32 }}>
           就像買衣服 — 套版是成衣，客製化是量身訂做。不是誰比較好，而是哪個更適合你的品牌。
         </p>
       </FadeIn>
@@ -594,9 +594,9 @@ function ComparisonSlide() {
               borderBottom: "1px solid #ECECEA",
             }}
           >
-            <div style={{ padding: "12px 20px", fontSize: 13, color: "#707070" }}>比較項目</div>
-            <div style={{ padding: "12px 20px", fontSize: 13, color: "#707070", textAlign: "center" }}>套版方案</div>
-            <div style={{ padding: "12px 20px", fontSize: 13, color: "#9A8866", textAlign: "center" }}>客製化</div>
+            <div style={{ padding: "12px 20px", fontSize: 14, color: "#555555" }}>比較項目</div>
+            <div style={{ padding: "12px 20px", fontSize: 14, color: "#555555", textAlign: "center" }}>套版方案</div>
+            <div style={{ padding: "12px 20px", fontSize: 14, color: "#9A8866", textAlign: "center" }}>客製化</div>
           </div>
           {rows.map((row, i) => (
             <div
@@ -607,9 +607,9 @@ function ComparisonSlide() {
                 borderBottom: i < rows.length - 1 ? "1px solid #ECECEA" : "none",
               }}
             >
-              <div style={{ padding: "12px 20px", fontSize: 14, fontWeight: 500 }}>{row.item}</div>
-              <div style={{ padding: "12px 20px", fontSize: 13, color: "#3D3D3D", fontWeight: 300, textAlign: "center" }}>{row.t}</div>
-              <div style={{ padding: "12px 20px", fontSize: 13, textAlign: "center" }}>{row.c}</div>
+              <div style={{ padding: "12px 20px", fontSize: 15, fontWeight: 500 }}>{row.item}</div>
+              <div style={{ padding: "12px 20px", fontSize: 14, color: "#2C2C2C", fontWeight: 300, textAlign: "center" }}>{row.t}</div>
+              <div style={{ padding: "12px 20px", fontSize: 14, textAlign: "center" }}>{row.c}</div>
             </div>
           ))}
         </div>
@@ -646,7 +646,7 @@ function ArchitectureSlide() {
         <Heading size="medium">網站架構規劃</Heading>
       </FadeIn>
       <FadeIn delay={0.15}>
-        <p style={{ fontSize: 15, color: "#3D3D3D", fontWeight: 300, marginBottom: 24 }}>
+        <p style={{ fontSize: 16, color: "#2C2C2C", fontWeight: 300, marginBottom: 24 }}>
           針對飾品 / 保養品質感品牌的購物網站，整理常見架構。實際功能依需求調整。
         </p>
       </FadeIn>
@@ -723,7 +723,7 @@ function ArchitectureSlide() {
                 >
                   <path d={archIcons[m.icon]} />
                 </svg>
-                <p style={{ fontFamily: "var(--font-serif)", fontSize: 14 }}>{m.name}</p>
+                <p style={{ fontFamily: "var(--font-serif)", fontSize: 15 }}>{m.name}</p>
               </div>
 
               {/* Sub-items */}
@@ -740,8 +740,8 @@ function ArchitectureSlide() {
                     key={j}
                     style={{
                       padding: "6px 8px",
-                      fontSize: 12,
-                      color: "#3D3D3D",
+                      fontSize: 13,
+                      color: "#2C2C2C",
                       fontWeight: 300,
                       textAlign: "center",
                       borderBottom: j < m.items.length - 1 ? "1px solid #F5F5F3" : "none",
@@ -757,7 +757,7 @@ function ArchitectureSlide() {
       </FadeIn>
 
       <FadeIn delay={0.5}>
-        <p style={{ marginTop: 20, fontSize: 12, color: "#707070" }}>
+        <p style={{ marginTop: 20, fontSize: 13, color: "#555555" }}>
           * 以上是通用架構，實際功能依客戶需求和預算調整
         </p>
       </FadeIn>
@@ -797,7 +797,7 @@ function ArchitectureKeyPages() {
         <Heading size="medium">關鍵頁面設計</Heading>
       </FadeIn>
       <FadeIn delay={0.15}>
-        <p style={{ fontSize: 15, color: "#3D3D3D", fontWeight: 300, marginBottom: 32 }}>
+        <p style={{ fontSize: 16, color: "#2C2C2C", fontWeight: 300, marginBottom: 32 }}>
           購物網站的轉換率，取決於這兩個頁面的體驗設計
         </p>
       </FadeIn>
@@ -806,8 +806,8 @@ function ArchitectureKeyPages() {
           <FadeIn key={i} delay={0.25 + i * 0.1}>
             <div style={{ padding: 32, border: "1px solid #ECECEA" }}>
               <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 20 }}>
-                <h3 style={{ fontFamily: "var(--font-serif)", fontSize: 22 }}>{page.title}</h3>
-                <span style={{ fontSize: 10, color: "#9A8866", padding: "4px 10px", border: "1px solid rgba(154,136,102,0.3)", letterSpacing: "0.05em" }}>
+                <h3 style={{ fontFamily: "var(--font-serif)", fontSize: 24 }}>{page.title}</h3>
+                <span style={{ fontSize: 11, color: "#9A8866", padding: "4px 10px", border: "1px solid rgba(154,136,102,0.3)", letterSpacing: "0.05em" }}>
                   {page.subtitle}
                 </span>
               </div>
@@ -815,7 +815,7 @@ function ArchitectureKeyPages() {
                 {page.features.map((feature, j) => (
                   <div key={j} style={{ display: "flex", alignItems: "start", gap: 10 }}>
                     <div style={{ width: 6, height: 6, borderRadius: 3, background: "rgba(154,136,102,0.5)", flexShrink: 0, marginTop: 6 }} />
-                    <p style={{ fontSize: 14, color: "#3D3D3D", fontWeight: 300 }}>{feature}</p>
+                    <p style={{ fontSize: 15, color: "#2C2C2C", fontWeight: 300 }}>{feature}</p>
                   </div>
                 ))}
               </div>
@@ -851,9 +851,9 @@ function FeaturesSlide() {
             { step: "04", title: "測試驗收", desc: "功能測試、內容上稿、上線" },
           ].map((item, i) => (
             <div key={i} style={{ position: "relative", padding: "16px 20px", border: "1px solid #ECECEA" }}>
-              <p style={{ color: "#9A8866", fontSize: 11, letterSpacing: "0.15em", marginBottom: 6 }}>{item.step}</p>
-              <p style={{ fontFamily: "var(--font-serif)", fontSize: 15, marginBottom: 4 }}>{item.title}</p>
-              <p style={{ color: "#707070", fontSize: 11 }}>{item.desc}</p>
+              <p style={{ color: "#9A8866", fontSize: 12, letterSpacing: "0.15em", marginBottom: 6 }}>{item.step}</p>
+              <p style={{ fontFamily: "var(--font-serif)", fontSize: 16, marginBottom: 4 }}>{item.title}</p>
+              <p style={{ color: "#555555", fontSize: 12 }}>{item.desc}</p>
             </div>
           ))}
         </div>
@@ -877,7 +877,7 @@ function FeaturesSlide() {
               ].map((t, i) => (
                 <div key={i} style={{ display: "flex", alignItems: "center", gap: 8 }}>
                   <div style={{ width: 4, height: 4, borderRadius: 2, background: "#C4A77D", flexShrink: 0 }} />
-                  <p style={{ fontSize: 13, color: "#3D3D3D", fontWeight: 300 }}>{t}</p>
+                  <p style={{ fontSize: 14, color: "#2C2C2C", fontWeight: 300 }}>{t}</p>
                 </div>
               ))}
             </div>
@@ -899,7 +899,7 @@ function FeaturesSlide() {
               ].map((t, i) => (
                 <div key={i} style={{ display: "flex", alignItems: "center", gap: 8 }}>
                   <div style={{ width: 4, height: 4, borderRadius: 2, background: "#C4A77D", flexShrink: 0 }} />
-                  <p style={{ fontSize: 13, color: "#3D3D3D", fontWeight: 300 }}>{t}</p>
+                  <p style={{ fontSize: 14, color: "#2C2C2C", fontWeight: 300 }}>{t}</p>
                 </div>
               ))}
             </div>
@@ -920,7 +920,7 @@ function FeaturesSlide() {
               ].map((t, i) => (
                 <div key={i} style={{ display: "flex", alignItems: "center", gap: 8 }}>
                   <div style={{ width: 4, height: 4, borderRadius: 2, background: "#C4A77D", flexShrink: 0 }} />
-                  <p style={{ fontSize: 13, color: "#3D3D3D", fontWeight: 300 }}>{t}</p>
+                  <p style={{ fontSize: 14, color: "#2C2C2C", fontWeight: 300 }}>{t}</p>
                 </div>
               ))}
             </div>
@@ -941,7 +941,7 @@ function FeaturesSlide() {
               ].map((t, i) => (
                 <div key={i} style={{ display: "flex", alignItems: "center", gap: 8 }}>
                   <div style={{ width: 4, height: 4, borderRadius: 2, background: "#C4A77D", flexShrink: 0 }} />
-                  <p style={{ fontSize: 13, color: "#3D3D3D", fontWeight: 300 }}>{t}</p>
+                  <p style={{ fontSize: 14, color: "#2C2C2C", fontWeight: 300 }}>{t}</p>
                 </div>
               ))}
             </div>
@@ -958,8 +958,8 @@ function FeaturesSlide() {
             { title: "長期投資效益", desc: "一次投資，持續為品牌帶來價值" },
           ].map((item, i) => (
             <div key={i} style={{ padding: "16px 20px", background: "#0C0C0C", color: "#FFFFFF" }}>
-              <p style={{ fontFamily: "var(--font-serif)", fontSize: 16, color: "#C4A77D", marginBottom: 6 }}>{item.title}</p>
-              <p style={{ fontSize: 13, fontWeight: 300, opacity: 0.8 }}>{item.desc}</p>
+              <p style={{ fontFamily: "var(--font-serif)", fontSize: 18, color: "#C4A77D", marginBottom: 6 }}>{item.title}</p>
+              <p style={{ fontSize: 14, fontWeight: 300, opacity: 0.8 }}>{item.desc}</p>
             </div>
           ))}
         </div>
@@ -972,7 +972,7 @@ function ClosingSlide() {
   return (
     <CenterSlide dark>
       <FadeIn>
-        <p style={{ fontSize: 13, letterSpacing: "0.15em", textTransform: "uppercase" as const, color: "#C4A77D", marginBottom: 24 }}>
+        <p style={{ fontSize: 14, letterSpacing: "0.15em", textTransform: "uppercase" as const, color: "#C4A77D", marginBottom: 24 }}>
           Let&apos;s Create Together
         </p>
       </FadeIn>

@@ -155,7 +155,7 @@ export function Label({ children }: { children: ReactNode }) {
   return (
     <p
       style={{
-        fontSize: 13,
+        fontSize: 14,
         letterSpacing: "0.15em",
         textTransform: "uppercase" as const,
         color: "#9A8866",
@@ -175,9 +175,9 @@ export function Heading({
   size?: "large" | "medium" | "small";
 }) {
   const sizeMap = {
-    large: 56,
-    medium: 40,
-    small: 32,
+    large: 60,
+    medium: 44,
+    small: 34,
   };
   return (
     <h1
@@ -198,8 +198,8 @@ export function Subtext({ children }: { children: ReactNode }) {
   return (
     <p
       style={{
-        fontSize: 18,
-        color: "#3D3D3D",
+        fontSize: 20,
+        color: "#2C2C2C",
         fontWeight: 300,
         lineHeight: 1.8,
         maxWidth: 600,

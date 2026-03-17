@@ -19,24 +19,26 @@ export default function Navigation({
   return (
     <>
       <nav
-        className="fixed top-0 left-0 right-0 z-50 h-16 flex items-center justify-between px-12"
+        className="fixed top-0 left-0 right-0 z-50 h-16 flex items-center justify-between"
         style={{
           background: "rgba(250, 250, 248, 0.92)",
           backdropFilter: "blur(12px)",
           borderBottom: "1px solid #ECECEA",
+          paddingLeft: 40,
+          paddingRight: 40,
         }}
       >
         <div className="flex items-center gap-3">
           <span
-            className="text-xl tracking-widest font-light"
+            className="text-2xl tracking-widest font-light"
             style={{ fontFamily: "var(--font-serif)" }}
           >
             <span style={{ color: "#9A8866" }}>i</span>Ware
           </span>
           <div style={{ width: 48, height: 1, background: "#9A8866" }} />
           <span
-            className="hidden sm:block text-xs tracking-wider"
-            style={{ color: "#707070" }}
+            className="hidden sm:block text-sm tracking-wider"
+            style={{ color: "#555555" }}
           >
             Web Design & Development
           </span>
@@ -47,9 +49,9 @@ export default function Navigation({
             <button
               key={section.id}
               onClick={() => onNavigate(section.id)}
-              className="relative px-4 py-2 text-sm tracking-wide transition-colors duration-300"
+              className="relative px-4 py-2 text-base tracking-wide transition-colors duration-300"
               style={{
-                color: i === currentNavIndex ? "#9A8866" : "#3D3D3D",
+                color: i === currentNavIndex ? "#9A8866" : "#2C2C2C",
               }}
             >
               {section.label}
@@ -122,7 +124,7 @@ export default function Navigation({
                   }}
                   className="text-2xl font-light tracking-wider transition-colors duration-300"
                   style={{
-                    color: i === currentNavIndex ? "#9A8866" : "#3D3D3D",
+                    color: i === currentNavIndex ? "#9A8866" : "#2C2C2C",
                   }}
                 >
                   {section.label}
