@@ -745,7 +745,7 @@ function ArchitectureSlide() {
           style={{
             display: "inline-block",
             padding: "14px 48px",
-            background: "linear-gradient(135deg, #1A1A1A 0%, #2C2C2C 100%)",
+            background: "linear-gradient(135deg, #9A8866 0%, #B5A07A 100%)",
             color: "#FFFFFF",
             fontFamily: "var(--font-serif)",
             fontSize: 18,
