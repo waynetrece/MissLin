@@ -948,21 +948,45 @@ function ArchitectureKeyPages() {
           購物網站的轉換率，取決於這兩個頁面的體驗設計
         </p>
       </FadeIn>
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }}>
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 28 }}>
         {keyPages.map((page, i) => (
           <FadeIn key={i} delay={0.25 + i * 0.1}>
-            <div style={{ padding: 32, border: "1px solid #ECECEA" }}>
-              <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 20 }}>
+            <div style={{
+              position: "relative", padding: "32px 28px",
+              background: "linear-gradient(135deg, #FFFFFF 0%, #F8F7F4 50%, #FFFFFF 100%)",
+              border: "1px solid #D8D6D0", borderRadius: 12,
+              boxShadow: "0 4px 16px rgba(0,0,0,0.06), inset 0 1px 0 rgba(255,255,255,0.9)",
+              overflow: "hidden", transition: "transform 0.3s, box-shadow 0.3s",
+            }}
+              onMouseEnter={(e) => { e.currentTarget.style.transform = "translateY(-4px)"; e.currentTarget.style.boxShadow = "0 12px 30px rgba(154,136,102,0.18)"; }}
+              onMouseLeave={(e) => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "0 4px 16px rgba(0,0,0,0.06), inset 0 1px 0 rgba(255,255,255,0.9)"; }}
+            >
+              {/* Glossy overlay */}
+              <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: "50%", background: "linear-gradient(180deg, rgba(255,255,255,0.5) 0%, transparent 100%)", pointerEvents: "none" }} />
+              {/* Gold top accent line */}
+              <div style={{ position: "absolute", top: 0, left: 24, right: 24, height: 2, background: "linear-gradient(90deg, transparent, #9A8866, transparent)" }} />
+              <div style={{ position: "relative", display: "flex", alignItems: "center", gap: 12, marginBottom: 22 }}>
+                <div style={{
+                  width: 40, height: 40, borderRadius: "50%",
+                  background: "linear-gradient(135deg, rgba(154,136,102,0.12), rgba(154,136,102,0.04))",
+                  display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0,
+                }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9A8866" strokeWidth="1.5">
+                    <path d={i === 0 ? "M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" : "M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z"} />
+                  </svg>
+                </div>
                 <h3 style={{ fontFamily: "var(--font-serif)", fontSize: 24 }}>{page.title}</h3>
-                <span style={{ fontSize: 11, color: "#9A8866", padding: "4px 10px", border: "1px solid rgba(154,136,102,0.3)", letterSpacing: "0.05em" }}>
+                <span style={{ fontSize: 11, color: "#9A8866", padding: "4px 12px", background: "rgba(154,136,102,0.08)", border: "1px solid rgba(154,136,102,0.2)", borderRadius: 20, letterSpacing: "0.05em" }}>
                   {page.subtitle}
                 </span>
               </div>
-              <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+              <div style={{ position: "relative", display: "flex", flexDirection: "column", gap: 14 }}>
                 {page.features.map((feature, j) => (
-                  <div key={j} style={{ display: "flex", alignItems: "start", gap: 10 }}>
-                    <div style={{ width: 6, height: 6, borderRadius: 3, background: "rgba(154,136,102,0.5)", flexShrink: 0, marginTop: 6 }} />
-                    <p style={{ fontSize: 15, color: "#2C2C2C", fontWeight: 300 }}>{feature}</p>
+                  <div key={j} style={{ display: "flex", alignItems: "start", gap: 12 }}>
+                    <div style={{ width: 20, height: 20, borderRadius: "50%", background: "rgba(154,136,102,0.08)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, marginTop: 1 }}>
+                      <div style={{ width: 6, height: 6, borderRadius: 3, background: "#9A8866" }} />
+                    </div>
+                    <p style={{ fontSize: 15, color: "#2C2C2C", fontWeight: 300, lineHeight: 1.5 }}>{feature}</p>
                   </div>
                 ))}
               </div>
